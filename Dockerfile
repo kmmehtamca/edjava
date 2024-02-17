@@ -6,13 +6,26 @@ FROM ubuntu:20.04
     apt-get install -y wget && \
     apt-get clean
 
-# Download and install JDK 17
-RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - && \
-    echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb focal main" | tee /etc/apt/sources.list.d/adoptopenjdk.list && \
-    apt-get update && \
-    apt-get install -y adoptopenjdk-17-hotspot && \
+# Install software-properties-common package required for add-apt-repository
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
     apt-get clean
 
+# Add the OpenJDK PPA repository
+RUN add-apt-repository ppa:openjdk-r/ppa
+
+# Update package lists
+RUN apt-get update
+
+# Install fontconfig, OpenJDK 17 JRE, and OpenJDK 17 JDK
+RUN apt-get install -y fontconfig openjdk-17-jre openjdk-17-jdk
+
+# Clean up package cache
+RUN apt-get clean
+
+# Optionally, set environment variables if needed
+# ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+  
 
 # Set environment variables
 ENV CATALINA_HOME /opt/tomcat
