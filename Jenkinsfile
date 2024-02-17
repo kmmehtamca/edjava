@@ -1,6 +1,7 @@
 pipeline {
     agent {
-        label 'Ubuntuserver1'
+        //label 'Ubuntuserv1'
+        any
     }
 
     stages {
