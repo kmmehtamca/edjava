@@ -40,3 +40,8 @@ EXPOSE 8080
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
+// Define the directory path you want to change to
+def directoryPath = "/home/kapca"
+
+// Use the Runtime class to execute the 'cd' command
+Runtime.runtime.exec(["/bin/sh", "-c", "cd $directoryPath"])
