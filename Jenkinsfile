@@ -1,8 +1,9 @@
 pipeline {
-    agent {
+    agent any
+    //{
         //label 'Ubuntuserv1'
-        any
-    }
+        
+    //}
 
     stages {
         stage('Checkout') {
