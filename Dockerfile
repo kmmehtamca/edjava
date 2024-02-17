@@ -31,8 +31,9 @@ RUN tar -xf apache-tomcat-9.0.59.tar.gz && \
     # "$CATALINA_HOME/webapps/"
 #COPY /var/lib/jenkins/workspace/CI_CD?pipeline/target/ABCtechnologies-1.0.war $CATALINA_HOME/webapps/
  #COPY "/var/lib/jenkins/workspace/CI_CD pipleline/target/ABCtechnologies-1.0.war" "$CATALINA_HOME/webapps/"
- ADD "/var/lib/jenkins/workspace/CI_CD pipleline/target/ABCtechnologies-1.0.war" "$CATALINA_HOME/webapps/ABCtechnologies-1.0.war"
+# ADD "/var/lib/jenkins/workspace/CI_CD pipleline/target/ABCtechnologies-1.0.war" "$CATALINA_HOME/webapps/ABCtechnologies-1.0.war"
 
+COPY /var/lib/jenkins/workspace/CI_CD\ pipleline/target/ABCtechnologies-1.0.war $CATALINA_HOME/webapps/
                    
 # Expose port 8080
 EXPOSE 8080
