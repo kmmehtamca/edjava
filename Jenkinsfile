@@ -39,7 +39,7 @@ pipeline {
                 sh '/opt//maven/bin/mvn package'
             }
         }
-        stage(''Build Docker Image'') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     // Assuming your Dockerfile is located at the root of your project directory
