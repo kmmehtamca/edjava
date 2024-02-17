@@ -47,7 +47,7 @@ pipeline {
                     // Assuming your Dockerfile is located at the root of your project directory
                     //Define the directory path you want to change to
                  
-                    docker.build('edv1:V1', '.')
+                    docker build -t 'edv1:V1' .
                 }
             }
         }
