@@ -35,7 +35,7 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 WORKDIR /tmp
 ADD https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.18/bin/apache-tomcat-10.1.18.tar.gz /tmp
 RUN tar -xf apache-tomcat-10.1.18.tar.gz && \
-    mv apache-tomcat-10.1.18. $CATALINA_HOME && \
+    mv apache-tomcat-10.1.18 $CATALINA_HOME && \
     rm apache-tomcat-10.1.18.tar.gz
 
 # Copy the WAR file to the webapps directory
