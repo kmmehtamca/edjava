@@ -39,5 +39,13 @@ pipeline {
                 sh '/opt//maven/bin/mvn package'
             }
         }
+        stage(''Build Docker Image'') {
+            steps {
+                script {
+                    // Assuming your Dockerfile is located at the root of your project directory
+                    docker.build('edv1:V1', '.')
+                }
+            }
+        }
     }
 }
