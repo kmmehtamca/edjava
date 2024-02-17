@@ -1,5 +1,5 @@
 # Use Ubuntu as the base image
-FROM ubuntu:20.04.6
+FROM ubuntu:20.04
 
 # Update packages and install necessary tools
   RUN apt-get update && \
