@@ -52,4 +52,4 @@ COPY target/ABCtechnologies-1.0.war $CATALINA_HOME/webapps/
 EXPOSE 8080
 
 # Start Tomcat
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["catalina.sh", "run"]
