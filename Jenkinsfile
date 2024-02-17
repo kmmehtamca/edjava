@@ -46,11 +46,7 @@ pipeline {
                 script {
                     // Assuming your Dockerfile is located at the root of your project directory
                     //Define the directory path you want to change to
-                def directoryPath = "/home/kapca"
-
-    // Use the Runtime class to execute the 'cd' command
-    Runtime.runtime.exec(["/bin/sh", "-c", "cd $directoryPath"])
-
+                 
                     docker.build('edv1:V1', '.')
                 }
             }
